@@ -40,8 +40,7 @@ public class login extends AppCompatActivity {
         tv=(TextView)findViewById(R.id.textView);
         firebaseAuth=FirebaseAuth.getInstance();
         if(firebaseAuth.getCurrentUser()!=null){
-            // launch some activity
-            //startActivity(new Intent(this,profile.class));
+            startActivity(new Intent(this,MainActivity.class));
         }
         progressDialog=new ProgressDialog(this);
         button.setOnClickListener(new View.OnClickListener() {
