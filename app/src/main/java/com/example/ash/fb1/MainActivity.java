@@ -44,13 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 //mMessageEditText.setText("");
             }
         });
-        Button r=(Button)findViewById(R.id.recvb);
-        //__________________________________________________
-        r.setOnClickListener(new View.OnClickListener() {
-            //tview1.setText(snapshot.getValue(String.class));
-            @Override
-            public void onClick(View view) {
-                // TODO: Send messages on click
+
 
                 msg1.addValueEventListener(new ValueEventListener() {
                     @Override
@@ -64,6 +58,6 @@ public class MainActivity extends AppCompatActivity {
                 });
 
             }
-        });
-    }
-}
+        }
+
+
