@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,6 +27,7 @@ public class login extends AppCompatActivity {
     private Button button;
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
+    private TextView tv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,7 @@ public class login extends AppCompatActivity {
         button = (Button)findViewById(R.id.button);
         editText=(EditText)findViewById(R.id.editText);
         editText2=(EditText)findViewById(R.id.editText2);
+        tv=(TextView)findViewById(R.id.textView);
         firebaseAuth=FirebaseAuth.getInstance();
         if(firebaseAuth.getCurrentUser()!=null){
             // launch some activity
@@ -47,6 +50,20 @@ public class login extends AppCompatActivity {
                 loginuser();
             }
         });
+
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotosignup();
+            }
+        });
+
+
+    }
+    private void gotosignup()
+    {
+        Intent i = new Intent(this,signup.class);
+        startActivity(i);
     }
     private void call()
     {

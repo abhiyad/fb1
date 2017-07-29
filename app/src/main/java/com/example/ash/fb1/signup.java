@@ -1,6 +1,7 @@
 package com.example.ash.fb1;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -50,6 +51,11 @@ public class signup extends AppCompatActivity {
             }
         });
     }
+    private void call()
+    {
+        Intent i = new Intent (this, MainActivity.class);
+        startActivity(i);
+    }
     private void register(){
         String email = editText.getText().toString().trim();
         String password = editText2.getText().toString().trim();
@@ -72,6 +78,7 @@ public class signup extends AppCompatActivity {
                         if(task.isSuccessful()){
                             Toast.makeText(signup.this, "Ho gaya ",Toast.LENGTH_SHORT).show();
                             progressDialog.dismiss();
+                            call();
                         }
                         else{
 
